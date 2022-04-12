@@ -14,7 +14,7 @@ public class Dictionary {
         try {
 //dont touch stop
             //next line will read first line and assign it to a variable and then run the code. reads next line and assigns it to same variable and runs code
-            FileInputStream fis = new FileInputStream("C:\\Users\\Jawal\\OneDrive\\Desktop\\CYDEO\\demo.txt"); //enter file path for txt file between " "
+            FileInputStream fis = new FileInputStream("C:\\Users\\Jawal\\OneDrive\\Desktop\\CYDEO\\dicend.txt"); //enter file path for txt file between " "
 //dont touch start
             Scanner sc = new Scanner(fis);
 
