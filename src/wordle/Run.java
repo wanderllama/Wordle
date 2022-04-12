@@ -75,29 +75,18 @@ public class Run {
                 String letterNot = input.nextLine();
                 notCorrectList.add(letterNot);
             }
+            //remove each letter from variables used to construct the regex
+            for (String element : notCorrectList) {
+                apb0 = apb0.replace(element, "");
+                apb1 = apb1.replace(element, "");
+                apb2 = apb2.replace(element, "");
+                apb3 = apb3.replace(element, "");
+                apb4 = apb4.replace(element, "");
+            }
 
             //run dictionary search using new regex
             Dictionary.dictionary(ptn);
 
-
-     /*     if letter is a miss remove letter from apb's
-     switch (pos) {
-                case 0:
-                    apb0 = apb0.replace(letter, "");
-                    break;
-                case 1:
-                    apb1 = apb1.replace(letter, "");
-                    break;
-                case 2:
-                    apb2 = apb2.replace(letter, "");
-                    break;
-                case 3:
-                    apb3 = apb3.replace(letter, "");
-                    break;
-                case 4:
-                    apb4 = apb4.replace(letter, "");
-                    break;
-            }*/
 
         }
     }
