@@ -28,6 +28,7 @@ public class Dictionary5Letter {
                 //original file had words that contained these invalid characters and i only want to add words of length five
                 if (!strIn.contains("/") && !strIn.contains("-") && !strIn.contains(".") && !strIn.contains(",") && !strIn.contains("'") && strIn.length() == 5) {
 
+                    //output file path
                     Path filePath = Paths.get("C:\\Users\\Jawal\\OneDrive\\Desktop\\CYDEO\\dicend.txt");
                     try {
                         //Write content to file
