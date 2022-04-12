@@ -29,38 +29,64 @@ public class Run {
         char option = 'r';
 
         while(option != x) {
+            //ask user to enter if they guessed letter in correct spot
             System.out.println("did you guess letter in correct spot: Y/N\nEnter 'x' to exit");
             String in = input.nextLine().trim().toLowerCase();
+            //if user guessed letter in correct spot
+                //ask how many letters in correct spot and  what index
             if (in.equals("y")) {
-                System.out.println("enter the letter");
-                String letter = input.nextLine();
+                System.out.println("how many did you get correct?");
+                int correct = input.nextInt();
+                while (correct-- > 0) {
+                    System.out.println("enter the letter");
+                    String letter = input.nextLine();
 
-                System.out.println("enter index of letter");
-                int pos = input.nextInt();
+                    System.out.println("enter index of letter");
+                    int pos = input.nextInt();
 
-                switch (pos) {
-                    case 0:
-                        apb0 = apb0.replace(letter , "");
-                        break;
-                    case 1:
-                        apb1 = apb1.replace(letter , "");
-                        break;
-                    case 2:
-                        apb2 = apb2.replace(letter , "");
-                        break;
-                    case 3:
-                        apb3 = apb3.replace(letter , "");
-                        break;
-                    case 4:
-                        apb4 = apb4.replace(letter , "");
-                        break;
+                    //replace apb's string with only the letter so regex will search only for words with that letter in that index
+                    switch (pos) {
+                        case 0:
+                            apb0 = letter;
+                            break;
+                        case 1:
+                            apb1 = letter;
+                            break;
+                        case 2:
+                            apb2 = letter;
+                            break;
+                        case 3:
+                            apb3 =letter;
+                            break;
+                        case 4:
+                            apb4 = letter;
+                            break;
+                    }
                 }
 
+                //run dictionary search using new regex
                 Dictionary.dictionary(ptn);
             }
 
 
-
+     /*     if letter is a miss remove letter from apb's
+     switch (pos) {
+                case 0:
+                    apb0 = apb0.replace(letter, "");
+                    break;
+                case 1:
+                    apb1 = apb1.replace(letter, "");
+                    break;
+                case 2:
+                    apb2 = apb2.replace(letter, "");
+                    break;
+                case 3:
+                    apb3 = apb3.replace(letter, "");
+                    break;
+                case 4:
+                    apb4 = apb4.replace(letter, "");
+                    break;
+            }*/
 
         }
     }
