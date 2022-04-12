@@ -63,10 +63,21 @@ public class Run {
                             break;
                     }
                 }
-
-                //run dictionary search using new regex
-                Dictionary.dictionary(ptn);
             }
+            //ask user how many letters to remove from each apb to search only for words that dont include them
+            System.out.println("how many letters did yopu guess that are not included in the word");
+            int notCorrect = input.nextInt();
+            //create arraylist to store these letters
+            ArrayList<String> notCorrectList = new ArrayList<>();
+            //get user input until and add to list untill all invalid letters are collected
+            while(notCorrect-- > 0) {
+                System.out.println("enter letter not correct");
+                String letterNot = input.nextLine();
+                notCorrectList.add(letterNot);
+            }
+
+            //run dictionary search using new regex
+            Dictionary.dictionary(ptn);
 
 
      /*     if letter is a miss remove letter from apb's
