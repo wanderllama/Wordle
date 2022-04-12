@@ -1,10 +1,13 @@
 package wordle;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Run {
     public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
 
         ArrayList<String> index = new ArrayList<>();
 
@@ -23,6 +26,42 @@ public class Run {
 
         Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
 
+        char option = 'r';
 
+        while(option != x) {
+            System.out.println("did you guess letter in correct spot: Y/N\nEnter 'x' to exit");
+            String in = input.nextLine().trim().toLowerCase();
+            if (in.equals("y")) {
+                System.out.println("enter the letter");
+                String letter = input.nextLine();
+
+                System.out.println("enter index of letter");
+                int pos = input.nextInt();
+
+                switch (pos) {
+                    case 0:
+                        apb0 = apb0.replace(letter , "");
+                        break;
+                    case 1:
+                        apb1 = apb1.replace(letter , "");
+                        break;
+                    case 2:
+                        apb2 = apb2.replace(letter , "");
+                        break;
+                    case 3:
+                        apb3 = apb3.replace(letter , "");
+                        break;
+                    case 4:
+                        apb4 = apb4.replace(letter , "");
+                        break;
+                }
+
+                Dictionary.dictionary(ptn);
+            }
+
+
+
+
+        }
     }
 }
