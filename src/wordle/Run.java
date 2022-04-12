@@ -65,7 +65,7 @@ public class Run {
                 }
             }
             //ask user how many letters to remove from each apb to search only for words that dont include them
-            System.out.println("how many letters did yopu guess that are not included in the word");
+            System.out.println("how many letters did yopu guess that are not included in the word\nenter 'x' to exit");
             int notCorrect = input.nextInt();
             //create arraylist to store these letters
             ArrayList<String> notCorrectList = new ArrayList<>();
@@ -84,10 +84,11 @@ public class Run {
                 apb4 = apb4.replace(element, "");
             }
 
+            //need to write code that will accept user input for letters guessed correctly but in wrong spot
+            //remove the letter from apb's corresponding index so regex changes and doesnt not return anywords that have the letter in the specified index
+
             //run dictionary search using new regex
             Dictionary.dictionary(ptn);
-
-
         }
     }
 }
