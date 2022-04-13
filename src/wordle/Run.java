@@ -25,11 +25,11 @@ public class Run {
         index.add(apb3);
         index.add(apb4);
 
-        Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
 
-        char option = 'r';
 
-        while(option != x) {
+        int count = 5;
+
+        while(count-- > 0) {
             //ask user to enter if they guessed letter in correct spot
             System.out.println("did you guess letter in correct spot: Y/N\nEnter 'x' to exit");
             String in = input.nextLine().trim().toLowerCase();
@@ -66,8 +66,12 @@ public class Run {
                 }
             }
             //ask user how many letters to remove from each apb to search only for words that dont include them
-            System.out.println("how many letters did yopu guess that are not included in the word\nenter 'x' to exit");
+            System.out.println("how many letters did you guess that are not included in the word\nenter '-1' to exit");
             int notCorrect = input.nextInt();
+            input.nextLine();
+            if (notCorrect == -1) {
+                break;
+            }
             //create arraylist to store these letters
             ArrayList<String> notCorrectList = new ArrayList<>();
             //get user input until and add to list untill all invalid letters are collected
@@ -87,7 +91,39 @@ public class Run {
 
             //need to write code that will accept user input for letters guessed correctly but in wrong spot
             //remove the letter from apb's corresponding index so regex changes and doesnt not return anywords that have the letter in the specified index
+            System.out.println("enter how many letters were correct but in wrong index\nenter '-1' to exit");
+            int wrongIndexCount = input.nextInt();
+            input.nextLine();
+            if (wrongIndexCount == -1) {
+                break;
+            }
+            while (wrongIndexCount-- > 0) {
+                System.out.println("Enter the letter");
+                String correctWrongIndex = input.nextLine();
 
+                System.out.println("enter index you guess it was at");
+                int indexOfGuess = input.nextInt();
+
+                switch (indexOfGuess) {
+                    case 0:
+                        apb0 = apb0.replace(correctWrongIndex , "");
+                        break;
+                    case 1:
+                        apb1 = apb1.replace(correctWrongIndex , "");
+                        break;
+                    case 2:
+                        apb2 = apb2.replace(correctWrongIndex , "");
+                        break;
+                    case 3:
+                        apb3 = apb3.replace(correctWrongIndex , "");
+                        break;
+                    case 4:
+                        apb4 = apb4.replace(correctWrongIndex , "");
+                        break;
+                }
+            }
+
+            Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
             //run dictionary search using new regex against a single string of all these words
             Dictionary.dictionaryCheck(ptn);
         }
