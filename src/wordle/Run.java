@@ -25,8 +25,6 @@ public class Run {
         index.add(apb3);
         index.add(apb4);
 
-
-
         int count = 5;
 
         while(count-- > 0) {
@@ -124,7 +122,6 @@ public class Run {
                         break;
                 }
             }
-
             Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
             //run dictionary search using new regex against a single string of all these words
             Dictionary.dictionaryCheck(ptn);
