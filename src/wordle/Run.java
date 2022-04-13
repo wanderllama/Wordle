@@ -38,6 +38,7 @@ public class Run {
             if (in.equals("y")) {
                 System.out.println("how many did you get correct?");
                 int correct = input.nextInt();
+                input.nextLine();
                 while (correct-- > 0) {
                     System.out.println("enter the letter");
                     String letter = input.nextLine();
