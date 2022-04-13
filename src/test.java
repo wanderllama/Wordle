@@ -1,5 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.*;
 
 public class test {
     public static void main(String[] args) {
@@ -7,7 +7,10 @@ public class test {
                 "123", "12345", "3333", "1357", "1537", "7531", "2371", "1337", "0001"
         };
         for (String test : tests) {
-            System.out.printf("%s = %b%n", test, test.matches("^(?=\\d{4}$)(?:(.)\\1*|0?1?2?3?4?5?6?7?8?9?|9?8?7?6?5?4?3?2?1?0?)$"));
+            if (test.matches("^(?=\\d{4}$)(?:(.)\\1*|0?1?2?3?4?5?6?7?8?9?|9?8?7?6?5?4?3?2?1?0?)$")) {
+                System.out.println(test);
+            }
+        }
 
 
         String str = "which\n" +
@@ -5768,6 +5771,11 @@ public class test {
                 "biffy\n" +
                 "pupal\n";
         String[] split = str.split("\n");
-        System.out.println(Arrays.toString(split));
+        for (String element : split) {
+            //will print all the words from dictionary that end with my
+            if (element.matches("[a-z][a-z][a-z][m][y]")) {
+                System.out.println(element);
+            }
+        }
     }
 }
