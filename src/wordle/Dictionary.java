@@ -1,9 +1,10 @@
 package wordle;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class Dictionary {
-    public static void dictionaryCheck(Pattern ptn) {
+    public static ArrayList<String> dictionaryCheck(Pattern ptn) {
         String str = "which\n" +
                 "there\n" +
                 "their\n" +
@@ -5762,11 +5763,23 @@ public class Dictionary {
                 "biffy\n" +
                 "pupal\n";
         String[] split = str.split("\n");
+        ArrayList<String> list = new ArrayList<>();
         for (String element : split) {
-            //will print all the words from dictionary that end with my
             if (element.matches(String.valueOf(ptn))) {
+                list.add(element);
                 System.out.println(element);
             }
         }
+        return list;
+    }
+    public static ArrayList<String> dictionaryCheck(Pattern ptn , ArrayList<String> list) {
+        ArrayList<String> listSend = new ArrayList<>();
+        for (String element : list) {
+            if (element.matches(String.valueOf(ptn))) {
+                listSend.add(element);
+                System.out.println(element);
+            }
+        }
+        return listSend;
     }
 }
