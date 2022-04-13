@@ -45,6 +45,7 @@ public class Run {
 
                     System.out.println("enter index of letter");
                     int pos = input.nextInt();
+                    input.nextLine();
 
                     //replace apb's string with only the letter so regex will search only for words with that letter in that index
                     switch (pos) {
