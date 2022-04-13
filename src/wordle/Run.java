@@ -87,7 +87,7 @@ public class Run {
             //need to write code that will accept user input for letters guessed correctly but in wrong spot
             //remove the letter from apb's corresponding index so regex changes and doesnt not return anywords that have the letter in the specified index
 
-            //run dictionary search using new regex
+            //run dictionary search using new regex against a single string of all these words
             Dictionary.dictionary(ptn);
         }
     }
