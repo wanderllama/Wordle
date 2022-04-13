@@ -1,4 +1,4 @@
-/*
+
 package wordle;
 
 import java.util.ArrayList;
@@ -89,8 +89,8 @@ public class Run {
             //remove the letter from apb's corresponding index so regex changes and doesnt not return anywords that have the letter in the specified index
 
             //run dictionary search using new regex against a single string of all these words
-            Dictionary.dictionary(ptn);
+            Dictionary.dictionaryCheck(ptn);
         }
     }
 }
-*/
+
