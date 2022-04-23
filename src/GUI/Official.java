@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import static GUI.GUIRun.words;
 
@@ -95,10 +96,15 @@ public class Official implements ActionListener {
                 click5 = -1;
             }
         }
+        String str = field.getText();
+        text.append(str + "\n");
+
         if (event.getSource() == submit) {
-            String str = field.getText();
-            System.out.println(str);
-            words(str , click1 , click2 , click3 , click4 , click5);
+            text.append(str+ "\n");
+            ArrayList<String> list = new ArrayList<>(words(str, click1, click2, click3, click4, click5));
+            for (String element : list) {
+                text.append(element + "\n");
+            }
         }
     }
 

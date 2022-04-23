@@ -1,6 +1,7 @@
 package GUI;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.regex.Pattern;
 
 public class GUIRun {
@@ -11,7 +12,7 @@ public class GUIRun {
     static String apb3;
     static String apb4;
 
-    public static void words(String str , int index0 , int index1 , int index2 , int index3 , int index4) {
+    public static Collection<? extends String> words(String str , int index0 , int index1 , int index2 , int index3 , int index4) {
 
         apb0 = "abcdefghijklmnopqrstuvwxyz";
         apb1 = "abcdefghijklmnopqrstuvwxyz";
@@ -77,6 +78,7 @@ public class GUIRun {
         Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
         System.out.println(dicGUI(ptn , wrongSpot));
         /*return dicGUI(ptn , wrongSpot);*/
+        return dicGUI(ptn , wrongSpot);
     }
 
 
