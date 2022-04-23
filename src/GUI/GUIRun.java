@@ -50,7 +50,7 @@ public class GUIRun {
         } else if (index4 == 2) {
             inRightSpot(fifth , 4);
         }
-
+        //TODO method call for when index == 1 for each index -> call method to remove letter from apb matching to index and
 
 
         Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
@@ -79,6 +79,8 @@ public class GUIRun {
             apb4 = l;
         }
     }
+
+//TODO method for when letter in word but wrong spot
 
     private static ArrayList<String> dicGUI(Pattern ptn) {
                 String str = "which\n" +
