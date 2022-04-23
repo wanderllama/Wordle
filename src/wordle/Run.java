@@ -25,6 +25,8 @@ public class Run {
         index.add(apb3);
         index.add(apb4);
 
+        System.out.println(index);
+
         int count = 5;
 
         while(count-- > 0) {
@@ -90,7 +92,7 @@ public class Run {
             }
 
             //need to write code that will accept user input for letters guessed correctly but in wrong spot
-            //remove the letter from apb's corresponding index so regex changes and doesnt not return anywords that have the letter in the specified index
+            //remove the letter from apb's corresponding index so regex changes and doesn't return any words that have the letter in the specified index
             System.out.println("enter how many letters were correct but in wrong index\nenter '-1' to exit");
             int wrongIndexCount = input.nextInt();
             input.nextLine();
@@ -103,6 +105,7 @@ public class Run {
 
                 System.out.println("enter index you guess it was at");
                 int indexOfGuess = input.nextInt();
+                input.nextLine();
 
                 switch (indexOfGuess) {
                     case 0:
