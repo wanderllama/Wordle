@@ -11,7 +11,7 @@ public class GUIRun {
     static String apb3;
     static String apb4;
 
-    public static ArrayList<String> words(String str , int index0 , int index1 , int index2 , int index3 , int index4) {
+    public static void words(String str , int index0 , int index1 , int index2 , int index3 , int index4) {
 
         apb0 = "abcdefghijklmnopqrstuvwxyz";
         apb1 = "abcdefghijklmnopqrstuvwxyz";
@@ -19,34 +19,55 @@ public class GUIRun {
         apb3 = "abcdefghijklmnopqrstuvwxyz";
         apb4 = "abcdefghijklmnopqrstuvwxyz";
 
-        String first = Character.toString(str.charAt(0));
-        String second = Character.toString(str.charAt(1));
-        String third = Character.toString(str.charAt(2));
-        String fourth = Character.toString(str.charAt(3));
-        String fifth = Character.toString(str.charAt(4));
+        String first = "" + (str.charAt(0));
+        String second = "" + (str.charAt(1));
+        String third = "" + (str.charAt(2));
+        String fourth = "" + (str.charAt(3));
+        String fifth = "" + (str.charAt(4));
+
+        ArrayList<String> wrongSpot = new ArrayList<>();
 
         if (index0 == 0) {
             notInWord(first);
+        } else if (index0 == 1) {
+            wrongSpot.add(first);
+            wrongIndex(first , 0);
         } else if (index0 == 2) {
             inRightSpot(first , 0);
         }
+
         if (index1 == 0) {
             notInWord(second);
+        } else if (index1 == 1) {
+            wrongSpot.add(second);
+            wrongIndex(second , 1);
         } else if (index1 == 2) {
             inRightSpot(second , 1);
         }
+
         if (index2 == 0) {
             notInWord(third);
+        } else if (index2 == 1) {
+            wrongSpot.add(third);
+            wrongIndex(third , 2);
         } else if (index2 == 2) {
             inRightSpot(third , 2);
         }
+
         if (index3 == 0) {
             notInWord(fourth);
+        } else if (index3 == 1) {
+            wrongSpot.add(fourth);
+            wrongIndex(fourth , 3);
         } else if (index3 == 2) {
             inRightSpot(fourth , 3);
         }
+
         if (index4 == 0) {
             notInWord(fifth);
+        } else if (index4 == 1) {
+            wrongSpot.add(fifth);
+            wrongIndex(fifth , 4);
         } else if (index4 == 2) {
             inRightSpot(fifth , 4);
         }
@@ -54,7 +75,8 @@ public class GUIRun {
 
 
         Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
-        return dicGUI(ptn);
+        System.out.println(dicGUI(ptn , wrongSpot));
+        /*return dicGUI(ptn , wrongSpot);*/
     }
 
 
@@ -64,6 +86,20 @@ public class GUIRun {
         apb2 = apb2.replace(element, "");
         apb3 = apb3.replace(element, "");
         apb4 = apb4.replace(element, "");
+    }
+
+    public static void wrongIndex(String element , int index) {
+        if (index == 0) {
+            apb0 = apb0.replace(element, "");
+        } else if (index == 1) {
+            apb1 = apb1.replace(element, "");
+        } else if (index == 2) {
+            apb2 = apb2.replace(element, "");
+        } else if (index == 3) {
+            apb3 = apb3.replace(element, "");
+        } else if (index == 4) {
+            apb4 = apb4.replace(element, "");
+        }
     }
 
     public static void inRightSpot(String l , int index) {
@@ -80,9 +116,7 @@ public class GUIRun {
         }
     }
 
-//TODO method for when letter in word but wrong spot
-
-    private static ArrayList<String> dicGUI(Pattern ptn) {
+    private static ArrayList<String> dicGUI(Pattern ptn , ArrayList<String> wrong) {
                 String str = "which\n" +
                         "there\n" +
                         "their\n" +
@@ -5844,7 +5878,17 @@ public class GUIRun {
                 ArrayList<String> possible = new ArrayList<>();
                 for (String element : split) {
                     if (element.matches(String.valueOf(ptn))) {
-                        possible.add(element);
+                        int count = 0;
+                        for (String letter : wrong) {
+                            if (element.contains(letter)) {
+                                break;
+                            } else {
+                                count++;
+                            }
+                        }
+                        if (count == wrong.size()) {
+                            possible.add(element);
+                        }
                     }
                 }
                 return possible;

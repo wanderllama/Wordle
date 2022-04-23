@@ -97,6 +97,7 @@ public class Official implements ActionListener {
         }
         if (event.getSource() == submit) {
             String str = field.getText();
+            System.out.println(str);
             words(str , click1 , click2 , click3 , click4 , click5);
         }
     }

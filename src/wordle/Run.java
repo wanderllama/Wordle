@@ -105,6 +105,7 @@ public class Run {
 
                 System.out.println("enter index you guess it was at");
                 int indexOfGuess = input.nextInt();
+                input.nextLine();
 
                 switch (indexOfGuess) {
                     case 0:
