@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static GUI.GUIRun.words;
+
 public class Official implements ActionListener {
     JButton b1 = new JButton();
     JButton b2 = new JButton();
@@ -94,7 +96,8 @@ public class Official implements ActionListener {
             }
         }
         if (event.getSource() == submit) {
-
+            String str = field.getText();
+            words(str , click1 , click2 , click3 , click4 , click5);
         }
     }
 
