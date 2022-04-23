@@ -5878,9 +5878,9 @@ public class GUIRun {
                         int count = 0;
                         for (String letter : wrong) {
                             if (element.contains(letter)) {
-                                break;
-                            } else {
                                 count++;
+                            } else {
+                                break;
                             }
                         }
                         if (count == wrong.size()) {
