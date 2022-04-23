@@ -72,12 +72,7 @@ public class GUIRun {
         } else if (index4 == 2) {
             inRightSpot(fifth , 4);
         }
-        //TODO method call for when index == 1 for each index -> call method to remove letter from apb matching to index and
-
-
         Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
-        System.out.println(dicGUI(ptn , wrongSpot));
-        /*return dicGUI(ptn , wrongSpot);*/
         return dicGUI(ptn , wrongSpot);
     }
 
@@ -5878,7 +5873,7 @@ public class GUIRun {
                         "pupal\n";
                 String[] split = str.split("\n");
                 ArrayList<String> possible = new ArrayList<>();
-                for (String element : split) {
+        for (String element : split) {
                     if (element.matches(String.valueOf(ptn))) {
                         int count = 0;
                         for (String letter : wrong) {

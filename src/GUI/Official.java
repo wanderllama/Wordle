@@ -33,11 +33,12 @@ public class Official implements ActionListener {
     public void go() {
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
+        JPanel fieldPanel = new JPanel();
 
         b1 = new JButton("*       not in word       *");b2 = new JButton("*       not in word       *");b3 = new JButton("*       not in word       *");b4 = new JButton("*       not in word       *");b5 = new JButton("*       not in word       *");
         submit = new JButton("Submit");
         text = new JTextArea(10 , 20);
-        field = new JTextField();
+        field = new JTextField(5);
         text.setLineWrap(true);
 
         b1.addActionListener(this);b2.addActionListener(this);b3.addActionListener(this);b4.addActionListener(this);b5.addActionListener(this);field.addActionListener(this);submit.addActionListener(this);
@@ -50,11 +51,13 @@ public class Official implements ActionListener {
         scroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         panel.add(scroller);
 
-        frame.getContentPane().add(BorderLayout.NORTH , field);
+        fieldPanel.add(field);
+
+        frame.add(fieldPanel);
         frame.getContentPane().add(BorderLayout.CENTER , panel);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1500,250);
+        frame.setSize(1300,250);
         frame.setVisible(true);
 
     }
@@ -63,38 +66,38 @@ public class Official implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == b1) {
             click1++;
-            change(b1 , click1);
-            if (click1 == 2) {
-                click1 = -1;
+            if (click1 == 3) {
+                click1 = 0;
             }
+            change(b1 , click1);
         }
         if (event.getSource() == b2) {
             click2++;
-            change(b2 , click2);
-            if (click2 == 2) {
-                click2 = -1;
+            if (click2 == 3) {
+                click2 = 0;
             }
+            change(b2 , click2);
         }
         if (event.getSource() == b3) {
             click3++;
-            change(b3 , click3);
-            if (click3 == 2) {
-                click3 = -1;
+            if (click3 == 3) {
+                click3 = 0;
             }
+            change(b3 , click3);
         }
         if (event.getSource() == b4) {
             click4++;
-            change(b4 , click4);
-            if (click4 == 2) {
-                click4 = -1;
+            if (click4 == 3) {
+                click4 = 0;
             }
+            change(b4 , click4);
         }
         if (event.getSource() == b5) {
             click5++;
-            change(b5 , click5);
-            if (click5 == 2) {
-                click5 = -1;
+            if (click5 == 3) {
+                click5 = 0;
             }
+            change(b5 , click5);
         }
         String str = field.getText();
         text.append(str + "\n");
