@@ -1,4 +1,4 @@
-package GUI;
+package WordleHelper;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import static GUI.GUIRun.words;
+import static WordleHelper.GUIRun.words;
 
 public class Official implements ActionListener {
     JButton b1 = new JButton();
