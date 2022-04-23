@@ -1,5 +1,7 @@
 package GUI;
 
+import WordleHelper.GUIRun;
+
 public class Test {
 
     //words method works

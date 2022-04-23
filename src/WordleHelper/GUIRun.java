@@ -1,4 +1,4 @@
-package GUI;
+package WordleHelper;
 
 import java.util.ArrayList;
 import java.util.Collection;
