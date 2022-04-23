@@ -27,19 +27,31 @@ public class GUIRun {
 
         if (index0 == 0) {
             notInWord(first);
+        } else if (index0 == 2) {
+            inRightSpot(first , 0);
         }
         if (index1 == 0) {
             notInWord(second);
+        } else if (index1 == 2) {
+            inRightSpot(second , 1);
         }
         if (index2 == 0) {
             notInWord(third);
+        } else if (index2 == 2) {
+            inRightSpot(third , 2);
         }
         if (index3 == 0) {
             notInWord(fourth);
+        } else if (index3 == 2) {
+            inRightSpot(fourth , 3);
         }
         if (index4 == 0) {
             notInWord(fifth);
+        } else if (index4 == 2) {
+            inRightSpot(fifth , 4);
         }
+
+
 
         Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
         return dicGUI(ptn);
@@ -52,6 +64,20 @@ public class GUIRun {
         apb2 = apb2.replace(element, "");
         apb3 = apb3.replace(element, "");
         apb4 = apb4.replace(element, "");
+    }
+
+    public static void inRightSpot(String l , int index) {
+        if (index == 0) {
+            apb0 = l;
+        } else if (index == 1) {
+            apb1 = l;
+        } else if (index == 2) {
+            apb2 = l;
+        } else if (index == 3) {
+            apb3 = l;
+        } else if (index == 4) {
+            apb4 = l;
+        }
     }
 
     private static ArrayList<String> dicGUI(Pattern ptn) {
