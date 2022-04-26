@@ -67,13 +67,7 @@ public class GUIRun {
         } else if (index4 == 2) {
             inRightSpot(fifth , 4);
         }
-        System.out.println(apb0);
-        System.out.println(apb1);
-        System.out.println(apb2);
-        System.out.println(apb3);
-        System.out.println(apb4);
         Pattern ptn = Pattern.compile("[" + apb0 + "]" + "[" + apb1 + "]" + "[" + apb2 + "]" + "[" + apb3 + "]" + "[" + apb4 + "]");
-        System.out.println(ptn);
         return dicGUI(ptn , wrongSpot);
     }
 
@@ -5877,18 +5871,15 @@ public class GUIRun {
         for (String element : split) {
 
             if (element.matches(String.valueOf(ptn))) {
-                System.out.println(element);
                 int count = 0;
                 for (String letter : wrong) {
                     if (element.contains(letter)) {
-                        System.out.println(letter);
                         count++;
                     } else {
                         break;
                     }
                 }
                 if (count == wrong.size()) {
-                    System.out.println(element);
                     possible.add(element);
                 }
             }

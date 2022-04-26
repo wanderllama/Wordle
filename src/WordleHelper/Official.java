@@ -86,10 +86,10 @@ public class Official implements ActionListener {
             }
             change(b5 , click5);
         }
-        String str = field.getText();
-        text.append(str + "\n");
         if (event.getSource() == submit) {
+            String str = field.getText();
             text.append(str+ "\n");
+            text.append("-----");
             ArrayList<String> list = new ArrayList<>(words(str, click1, click2, click3, click4, click5));
             for (String element : list) {
                 text.append(element + "\n");
