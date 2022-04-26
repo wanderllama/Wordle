@@ -15,53 +15,40 @@ public class Official implements ActionListener {
     JButton b4 = new JButton();
     JButton b5 = new JButton();
     JButton submit = new JButton("Submit");
-
     int click1 = 0;
     int click2 = 0;
     int click3 = 0;
     int click4 = 0;
     int click5 = 0;
-
     JTextArea text;
     JTextField field;
-
     public static void main(String[] args) {
         Official gui = new Official();
         gui.go();
     }
-
     public void go() {
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
         JPanel fieldPanel = new JPanel();
-
         b1 = new JButton("*       not in word       *");b2 = new JButton("*       not in word       *");b3 = new JButton("*       not in word       *");b4 = new JButton("*       not in word       *");b5 = new JButton("*       not in word       *");
         submit = new JButton("Submit");
         text = new JTextArea(10 , 20);
         field = new JTextField(5);
         text.setLineWrap(true);
-
         b1.addActionListener(this);b2.addActionListener(this);b3.addActionListener(this);b4.addActionListener(this);b5.addActionListener(this);field.addActionListener(this);submit.addActionListener(this);
-
         frame.add(b1);frame.add(b2);frame.add(b3);frame.add(b4);frame.add(b5);frame.add(submit);
         frame.setLayout(new java.awt.FlowLayout());
-
         JScrollPane scroller = new JScrollPane(text);
         scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         panel.add(scroller);
-
         fieldPanel.add(field);
-
         frame.add(fieldPanel);
         frame.getContentPane().add(BorderLayout.CENTER , panel);
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1300,250);
         frame.setVisible(true);
-
     }
-
     @Override
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == b1) {
@@ -101,7 +88,6 @@ public class Official implements ActionListener {
         }
         String str = field.getText();
         text.append(str + "\n");
-
         if (event.getSource() == submit) {
             text.append(str+ "\n");
             ArrayList<String> list = new ArrayList<>(words(str, click1, click2, click3, click4, click5));
@@ -110,7 +96,6 @@ public class Official implements ActionListener {
             }
         }
     }
-
     public static void change(JButton button , int click) {
         if (click == 1) {
             button.setText("*in word but not this spot*");
