@@ -10,5 +10,5 @@ use the buttons to choose
 *letter in wrong spot  
 *letter in right spot  
 
-after using buttons enter word and click enter  
+after using buttons enter word   
 then click submit button  
